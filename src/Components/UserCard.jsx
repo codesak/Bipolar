@@ -8,6 +8,7 @@ const { Meta } = Card;
 export default function UserCard() {
   const [userId, setuserId] = useState([]);
   
+  
   let newarr=[];
 
   useEffect(() => {
@@ -20,15 +21,9 @@ export default function UserCard() {
     });
   }, []);
 
-  useEffect(()=>{
-    const fetchData = async()=>{
-      const response = await api.get('https://jsonplaceholder.typicode.com/users');
-      const details = await Promise.all(response.data.results.map((res1) => {
-        return axios.get(`https://avatars.dicebear.com/v2/avataaars/${res1.name}>}.svg?options[mood][]=happy`)
-      }));
 
-    }
-  })
+  
+  
 
 
   
@@ -48,26 +43,26 @@ console.log(newarr);
         cover={<img alt="example" src={avatar.data} />}
         actions={[<HeartOutlined style={{color:'red'}} />, <EditOutlined />, <DeleteOutlined />]}
       >
-        <Meta style={{fontSize:"10em"}}
+        <Meta 
           title =  {res3.name}
         />
-        <Meta style={{opacity:".65"}}
+        <Meta style={{opacity:".55"}}
         avatar={<MailOutlined />}
         description = {res3.email} 
         />
-        <Meta style={{opacity:".65"}}
+        <Meta style={{opacity:".55"}}
         avatar={<PhoneOutlined />}
         description={res3.phone}
         />
-        <Meta style={{opacity:".65"}}
+        <Meta style={{opacity:".55"}}
         avatar={<HomeOutlined />}
-        description={res3.address.street + " " + res3.address.suite + " " + res3.address.city}
+        description={res3.address.street + " " +  res3.address.city}
         />
-        <Meta style={{opacity:".65"}}
+        <Meta style={{opacity:".55"}}
         avatar={<FormOutlined />}
         description={res3.website}
         />
-        <Meta style={{opacity:".65"}}
+        <Meta style={{opacity:".55"}}
         avatar={<GlobalOutlined />}
         description={res3.company.name}
         />
