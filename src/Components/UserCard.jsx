@@ -17,7 +17,7 @@ export default function UserCard({setLoading}) {
       setuserId(res.data);
       setLoading(false)
     });
-  }, []);
+  });
 
   console.log(newarr);
 
