@@ -1,9 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { Card } from "antd";
-
+import axios from "axios"
 import Usercard1 from "./Usercard1";
+import "./UserCard2.css"
 
 
 export default function UserCard() {
@@ -20,14 +19,14 @@ export default function UserCard() {
   console.log(newarr);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "20px",
-        marginLeft: "6em",
-        marginTop: "2em",
-      }}
+    <div className="user1"
+      // style={{
+      //   display: "flex",
+      //   flexWrap: "wrap",
+      //   gap: "20px",
+      //   marginLeft: "6em",
+      //   marginTop: "2em",
+      //         }}
     >
       {userId?.map((res3, index) => {
         return (

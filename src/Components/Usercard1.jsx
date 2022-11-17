@@ -26,16 +26,18 @@ export default function Usercard1({ res3 }) {
         axios.get(`https://avatars.dicebear.com/v2/avataaars/${res3?.name}.svg?options[mood][]=happy`).then((res) => {
             setAvatar(res?.data);
         });
-    }, []);
+    });
     return (
 
 
         <Card
             style={{
-                width: "21vw",
+                width: "25%",
                 flexBasis: "22%",
+                // margin:"11px"
+                // height:"21vw"
             }}
-            cover={<img alt="example" src={`https://avatars.dicebear.com/v2/avataaars/${res3?.name}.svg?options[mood][]=happy`}/>}
+            cover={<img alt="example" style={{ height:"200px",backgroundColor: "#f5f5f5" }} src={`https://avatars.dicebear.com/v2/avataaars/${res3?.name}.svg?options[mood][]=happy`}/>}
             actions={[
                     <HeartOutlined style={{ color: "red" }} />,
                     <EditOutlined />,
@@ -70,5 +72,6 @@ export default function Usercard1({ res3 }) {
                     description={res3.company.name}
                 />
             </Card> 
+            
   )
 }
