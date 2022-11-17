@@ -1,4 +1,4 @@
-import React, { userId } from 'react'
+import React from 'react'
 import { Card } from "antd";
 import { useState, useEffect } from 'react';
 import "./UserCard2.css"
@@ -28,7 +28,7 @@ export default function Usercard1({ res3 ,index ,setuserId,userId}) {
         axios.get(`https://avatars.dicebear.com/v2/avataaars/${res3?.name}.svg?options[mood][]=happy`).then((res) => {
             setAvatar(res?.data);
         });
-    });
+    },[]);
     const [lovebutton, setLovebutton] = useState(false)
     return (
 
