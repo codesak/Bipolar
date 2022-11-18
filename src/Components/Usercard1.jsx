@@ -86,7 +86,7 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
 
                                     <tr>
                                         <td><label> <span style={{color:"red"}}>*</span> Email: </label></td>
-                                        <td><input defaultValue={res3.name} type="text" /></td>
+                                        <td><input defaultValue={res3.email} type="text" /></td>
                                     </tr>
 
                                     <tr>
