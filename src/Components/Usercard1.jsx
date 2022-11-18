@@ -64,18 +64,7 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
 
                 <EditOutlined onClick={showModal}
                 />,
-                <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                    <div style={{ display: "flex", flexDirection: "column", width:"fit-content" }}>
-                        <p style={{width:"fit-content"}}>Name: <input type="text" defaultValue={res3.name} style={{
-                            opacity: ".56", height: "30px", padding: " 4px 11px", borderRadius: "4px"
-                        }} /></p>
-
-                        <p style={{width:"fit-content"}}> Email: <input type="text" defaultValue={res3.email} style={{ opacity: ".56", width: "80%", height: "30px", padding: " 4px 11px", borderRadius: "4px" }} /></p>
-                        <p style={{width:"fit-content"}}>Phone: <input type="text" defaultValue={res3.phone} style={{ opacity: ".56", width: "80%", height: "30px", padding: " 4px 11px", borderRadius: "4px" }} /></p>
-                        <p style={{width:"60%"}}>Address: <input type="text" defaultValue={res3.address.street + "" + res3.address.city} style={{ opacity: ".56", width: "50%" , height: "30px", padding: " 4px 11px", borderRadius: "4px"}} /></p>
-                        <p style={{width:"fit-content"}}>Website: <input type="text" defaultValue={res3.website} style={{ opacity: ".56", width: "80%" , height: "30px", padding: " 4px 11px", borderRadius: "4px"}} /></p>
-                        <p style={{width:"fit-content"}}>Company Name: <input type="text" defaultValue={res3.company.name} style={{ opacity: ".56", width: "80%" , height: "30px", padding: " 4px 11px", borderRadius: "4px"}} /></p></div>
-                </Modal>,
+               
                 <DeleteOutlined onClick={() => {
                     setuserId([...userId.slice(0, index), ...userId.slice(index + 1, userId?.length)])
                     console.log([...userId.slice(index + 1, userId?.length)]);
@@ -84,6 +73,51 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
                 }} />,
             ]}
         >
+             <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                    <div className='modal1'>
+                        <form action="">
+                            <table border="0" align="center">
+                                <tbody>
+
+                                    <tr>
+                                        <td><labe><span style={{color:"red"}}>*</span>  Name: </labe></td>
+                                        <td><input defaultValue={res3.name} type="text" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label> <span style={{color:"red"}}>*</span> Email: </label></td>
+                                        <td><input defaultValue={res3.name} type="text" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label> <span style={{color:"red"}}>*</span> Phone: </label></td>
+                                        <td><input defaultValue={res3.phone} type="text" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label> <span style={{color:"red"}}>*</span> Address: </label></td>
+                                        <td><input defaultValue={res3.address.city} type="text" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><label> <span style={{color:"red"}}>*</span> Website: </label></td>
+                                        <td><input defaultValue={res3.website} type="text" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style={{width:'48% !important'}}><label> <span style={{color:"red"}}>*</span> Company:</label></td>
+                                        <td><input defaultValue={res3.company.name} type="text" /></td>
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+
+
+                </Modal>
             <Meta title={res3.name} />
             <Meta
                 style={{ opacity: ".55" }}

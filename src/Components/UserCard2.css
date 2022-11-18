@@ -1,0 +1,27 @@
+tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+input {
+  border-radius: 4px;
+  width: 20vw;
+  display: inline-block;
+  height: 32px;
+  opacity: 0.6;
+  padding: 4px 11px;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+
+  transition: all 0.3s;
+}
+input:hover {
+  border-color: aqua;
+}
+@media screen and (max-width:400px) {
+    input{
+        width:100%;
+    }
+}
