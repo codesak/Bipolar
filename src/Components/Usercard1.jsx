@@ -23,6 +23,15 @@ const { Meta } = Card;
 export default function Usercard1({ res3, index, setuserId, userId }) {
     const [avatar, setAvatar] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [firstName, setfirstName] = useState(res3.name);
+
+    let handleChange=(e)=>{
+        
+          setfirstName(e.target.value);
+          
+    }
+    // console.log(firstName)
+
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -32,8 +41,6 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
     const handleCancel = () => {
         setIsModalOpen(false);
     };
-
-
 
 
 
@@ -81,7 +88,7 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
 
                                     <tr>
                                         <td><labe><span style={{color:"red"}}>*</span>  Name: </labe></td>
-                                        <td><input defaultValue={res3.name} type="text" /></td>
+                                        <td><input defaultValue={res3.name} onChange={handleChange} type="text" /></td>
                                     </tr>
 
                                     <tr>
@@ -118,7 +125,7 @@ export default function Usercard1({ res3, index, setuserId, userId }) {
 
 
                 </Modal>
-            <Meta title={res3.name} />
+            <Meta title={firstName} />
             <Meta
                 style={{ opacity: ".55" }}
                 avatar={<MailOutlined />}
